@@ -1,0 +1,31 @@
+## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
+##
+grafana:
+  adminPassword: prom-operator
+
+  ## Passed to grafana subchart and used by servicemonitor below
+  ##
+  service:
+    portName: http-web
+
+## Manages Prometheus and Alertmanager components
+##
+prometheusOperator:
+  ## Prometheus-Operator v0.39.0 and later support TLS natively.
+  tls:
+    enabled: false
+  ## Configuration for Prometheus operator service
+  ##
+  service:
+    nodePort: 40080
+    nodePortTls: 30443
+    type: NodePort
+
+  resources: {}
+
+## Deploy a Prometheus instance
+##
+prometheus:
+  service:
+    nodePort: 30090
+    type: NodePort
