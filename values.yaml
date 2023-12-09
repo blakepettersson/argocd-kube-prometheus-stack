@@ -17,7 +17,7 @@ prometheusOperator:
   ## Configuration for Prometheus operator service
   ##
   service:
-    nodePort: 40080
+    nodePort: 32000
     nodePortTls: 30443
     type: NodePort
 
