@@ -13,17 +13,18 @@ grafana:
     dashboardproviders.yaml:
       apiVersion: 1
       providers:
-      - name: 'argocd'
+      - name: 'default'
         orgId: 1
         folder: ''
         type: file
         disableDeletion: false
         editable: false
         options:
-          path: /var/lib/grafana/dashboards/argocd
+          path: /var/lib/grafana/dashboards/default
   dashboards:
-    argocd:
-      url: https://github.com/argoproj/argo-cd/blob/master/examples/dashboard.json
+    default:
+      argocd:
+        url: https://github.com/argoproj/argo-cd/blob/master/examples/dashboard.json
 
 ## Manages Prometheus and Alertmanager components
 ##
