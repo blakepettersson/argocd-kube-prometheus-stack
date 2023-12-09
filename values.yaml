@@ -6,7 +6,8 @@ grafana:
   ## Passed to grafana subchart and used by servicemonitor below
   ##
   service:
-    portName: http-web
+    type: NodePort
+    nodePort: 31000
 
 ## Manages Prometheus and Alertmanager components
 ##
