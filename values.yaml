@@ -9,6 +9,21 @@ grafana:
     type: NodePort
     nodePort: 31000
 
+  dashboardProviders:
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+      - name: 'argocd'
+        orgId: 1
+        folder: ''
+        type: file
+        disableDeletion: false
+        editable: false
+
+  dashboards:
+    argocd:
+      url: https://github.com/argoproj/argo-cd/blob/master/examples/dashboard.json
+
 ## Manages Prometheus and Alertmanager components
 ##
 prometheusOperator:
