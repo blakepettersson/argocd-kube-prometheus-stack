@@ -24,7 +24,7 @@ grafana:
   dashboards:
     default:
       argocd:
-        url: https://github.com/argoproj/argo-cd/blob/master/examples/dashboard.json
+        url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
 
 ## Manages Prometheus and Alertmanager components
 ##
@@ -47,3 +47,6 @@ prometheus:
   service:
     nodePort: 30090
     type: NodePort
+
+alertmanager:
+  enabled: false
