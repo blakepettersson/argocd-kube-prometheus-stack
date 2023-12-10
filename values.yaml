@@ -1,3 +1,7 @@
+defaultRules:
+  rules:
+    alertmanager: false
+
 ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
 ##
 grafana:
@@ -25,21 +29,6 @@ grafana:
     default:
       argocd:
         url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
-
-## Manages Prometheus and Alertmanager components
-##
-prometheusOperator:
-  ## Prometheus-Operator v0.39.0 and later support TLS natively.
-  tls:
-    enabled: false
-  ## Configuration for Prometheus operator service
-  ##
-  service:
-    nodePort: 32000
-    nodePortTls: 30443
-    type: NodePort
-
-  resources: {}
 
 ## Deploy a Prometheus instance
 ##
